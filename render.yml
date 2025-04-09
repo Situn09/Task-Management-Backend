@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: task-api
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn run:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: JWT_SECRET_KEY
+        value: your_jwt_secret_here
+      - key: DATABASE_URL
+        value: sqlite:///tasks.db # use PostgreSQL for production ideally
