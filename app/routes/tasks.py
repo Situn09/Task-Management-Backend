@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from app.models import Task, db
+from app.utils import validate_fields
 
 tasks_bp = Blueprint("tasks", __name__)
 
@@ -10,6 +11,10 @@ tasks_bp = Blueprint("tasks", __name__)
 def create_task():
     user_id = get_jwt_identity()
     data = request.get_json()
+
+    is_valid, error = validate_fields(data, ["title"])
+    if not is_valid:
+        return jsonify({"msg": error}), 400
 
     title = data.get("title")
     description = data.get("description")

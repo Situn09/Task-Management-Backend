@@ -3,12 +3,18 @@ from app.models import User
 from app import db
 from flask_jwt_extended import create_access_token
 from datetime import timedelta
+from app.utils import validate_fields
 
 auth_bp = Blueprint("auth", __name__)
 
 @auth_bp.route("/register", methods=["POST"])
 def register():
     data = request.get_json()
+
+    is_valid, error = validate_fields(data, ["username", "password"])
+    if not is_valid:
+        return jsonify({"msg": error}), 400
+    
     username = data.get("username")
     password = data.get("password")
 
@@ -29,6 +35,11 @@ def register():
 @auth_bp.route("/login", methods=["POST"])
 def login():
     data = request.get_json()
+
+    is_valid, error = validate_fields(data, ["username", "password"])
+    if not is_valid:
+        return jsonify({"msg": error}), 400
+    
     username = data.get("username")
     password = data.get("password")
 
