@@ -1,0 +1,140 @@
+{
+  "info": {
+    "name": "Task Manager API",
+    "_postman_id": "1a0fd0b2-55e7-4d45-bf18-abcdef123456",
+    "description": "Postman collection for Task Manager API using Flask and JWT.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"john\",\n  \"password\": \"secret123\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "https://task-api.onrender.com/auth/register",
+          "protocol": "https",
+          "host": ["task-api", "onrender", "com"],
+          "path": ["auth", "register"]
+        }
+      }
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"john\",\n  \"password\": \"secret123\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "https://task-api.onrender.com/auth/login",
+          "protocol": "https",
+          "host": ["task-api", "onrender", "com"],
+          "path": ["auth", "login"]
+        }
+      }
+    },
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}",
+            "type": "text"
+          },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Finish API\",\n  \"description\": \"Build and test endpoints\",\n  \"status\": \"pending\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "https://task-api.onrender.com/tasks/",
+          "protocol": "https",
+          "host": ["task-api", "onrender", "com"],
+          "path": ["tasks", ""]
+        }
+      }
+    },
+    {
+      "name": "Get All Tasks",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://task-api.onrender.com/tasks/",
+          "protocol": "https",
+          "host": ["task-api", "onrender", "com"],
+          "path": ["tasks", ""]
+        }
+      }
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}",
+            "type": "text"
+          },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated Title\",\n  \"status\": \"completed\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "https://task-api.onrender.com/tasks/1",
+          "protocol": "https",
+          "host": ["task-api", "onrender", "com"],
+          "path": ["tasks", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Task",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://task-api.onrender.com/tasks/1",
+          "protocol": "https",
+          "host": ["task-api", "onrender", "com"],
+          "path": ["tasks", "1"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "access_token",
+      "value": ""
+    }
+  ]
+}
