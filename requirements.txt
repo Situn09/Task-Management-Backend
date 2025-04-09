@@ -4,4 +4,3 @@ Flask-SQLAlchemy
 python-dotenv
 flask-cors
 gunicorn
-6138b5b9-0be3-406a-9c48-10895f529817

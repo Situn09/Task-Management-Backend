@@ -17,9 +17,9 @@
           "options": { "raw": { "language": "json" } }
         },
         "url": {
-          "raw": "https://task-api.onrender.com/auth/register",
-          "protocol": "https",
-          "host": ["task-api", "onrender", "com"],
+          "raw": "http://127.0.0.1:5000/auth/register",
+          "host": ["127.0.0.1"],
+          "port": "5000",
           "path": ["auth", "register"]
         }
       }
@@ -35,9 +35,10 @@
           "options": { "raw": { "language": "json" } }
         },
         "url": {
-          "raw": "https://task-api.onrender.com/auth/login",
+          "raw": "http://127.0.0.1:5000/auth/login",
           "protocol": "https",
-          "host": ["task-api", "onrender", "com"],
+          "host": ["127.0.0.1"],
+          "port": "5000",
           "path": ["auth", "login"]
         }
       }
@@ -60,9 +61,10 @@
           "options": { "raw": { "language": "json" } }
         },
         "url": {
-          "raw": "https://task-api.onrender.com/tasks/",
+          "raw": "http://127.0.0.1:5000/tasks/",
           "protocol": "https",
-          "host": ["task-api", "onrender", "com"],
+          "host": ["127.0.0.1"],
+          "port": "5000",
           "path": ["tasks", ""]
         }
       }
@@ -79,9 +81,10 @@
           }
         ],
         "url": {
-          "raw": "https://task-api.onrender.com/tasks/",
+          "raw": "http://127.0.0.1:5000/tasks/",
           "protocol": "https",
-          "host": ["task-api", "onrender", "com"],
+          "host": ["127.0.0.1"],
+          "port": "5000",
           "path": ["tasks", ""]
         }
       }
@@ -104,9 +107,10 @@
           "options": { "raw": { "language": "json" } }
         },
         "url": {
-          "raw": "https://task-api.onrender.com/tasks/1",
+          "raw": "http://127.0.0.1:5000/tasks/1",
           "protocol": "https",
-          "host": ["task-api", "onrender", "com"],
+          "host": ["127.0.0.1"],
+          "port": "5000",
           "path": ["tasks", "1"]
         }
       }
@@ -123,9 +127,10 @@
           }
         ],
         "url": {
-          "raw": "https://task-api.onrender.com/tasks/1",
+          "raw": "http://127.0.0.1:5000/tasks/1",
           "protocol": "https",
-          "host": ["task-api", "onrender", "com"],
+          "host": ["127.0.0.1"],
+          "port": "5000",
           "path": ["tasks", "1"]
         }
       }
